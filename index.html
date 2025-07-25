@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management System</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>TypeScript User Management System</h1>
+        <p>Vanilla HTML, CSS & TypeScript Implementation</p>
+      </header>
+
+      <section class="form-section">
+        <h2>Create New User</h2>
+        <form id="userForm" class="user-form">
+          <div class="form-group">
+            <label for="username">Username *</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required />
+            <small class="password-hint">Minimum 8 characters (12 for admin)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate">Birth Date (Optional)</label>
+            <input type="date" id="birthDate" name="birthDate" />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address (Optional)</label>
+            <input id="address" name="address" ></input>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label>
+              <input type="checkbox" id="isActive" name="isActive" checked />
+              Active User
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Create User</button>
+        </form>
+      </section>
+
+      <section class="users-section">
+        <div class="section-header">
+          <h2>Users List</h2>
+          <div class="filters">
+            <select id="roleFilter">
+              <option value="">All Roles</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search user name..." />
+          </div>
+        </div>
+        
+        <div id="usersList" class="users-list">
+          <p class="no-users">No users created yet</p>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="./src/main.ts"></script>
+  </body>
+</html>
